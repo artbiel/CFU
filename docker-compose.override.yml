@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+
+  sqldata:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "My_Secure_Password_228"
+    
+  rediscache:
+    ports:
+      - "6379:6379"
+
+  universitymanagement-webapi:
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Production"
+      ASPNETCORE_URLS: "https://0.0.0.0:443;http://0.0.0.0:80"
+      ASPNETCORE_Kestrel__Certificates__Default__Password: "12345"
+      ASPNETCORE_Kestrel__Certificates__Default__Path: /https/aspnetapp.pfx
+      ConnectionStrings__DefaultConnection: "Server=sqldata;Database=cfuuniversitymanagementdb;User=sa;Password=My_Secure_Password_228;MultipleActiveResultSets=True;"
+      ConnectionStrings__Cache: "rediscache:6379,abortConnect=False"
+    ports:
+      - "7001:443"
+      - "7000:80"
+    volumes:
+      - ~/.aspnet/https:/https:/https/

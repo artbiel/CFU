@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+
+  sqldatatest:
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "My_Secure_Password_228"
+    ports:
+      - "1433:1433"
+    
+  rediscachetest:
+    ports:
+      - "6379:6379"

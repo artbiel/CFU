@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" Version="4.0.0" />
+    <PackageReference Include="MediatR.Contracts" Version="1.0.1" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="CFU.Domain.UnitTests"/>
+		<InternalsVisibleTo Include="CFU.EventHandlers"/>
+		<InternalsVisibleTo Include="CFU.UniversityManagement.IntegrationTests"/>
+	</ItemGroup>
+</Project>

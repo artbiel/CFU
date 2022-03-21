@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2019-latest 
+    
+  rediscache:
+    image: redis:alpine
+
+  universitymanagement-webapi:
+    image: localhost:5000/cfuuniversitymanagementwebapi
+    depends_on:
+      - sqldata
+      - rediscache

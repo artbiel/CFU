@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "CFU.UniversityManagement.IntegrationTests": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Staging"
+      }
+    }
+  }
+}
