@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/CFU.UniversityManagement.WebAPI/CFU.UniversityManagement.WebAPI.csproj", "src/CFU.UniversityManagement.WebAPI/"]
 COPY ["src/CFU.UniversityManagement.Infrastructure/CFU.UniversityManagement.Infrastructure.csproj", "src/CFU.UniversityManagement.Infrastructure/"]
-COPY ["src/CFU.Application/CFU.UniversityManagement.Application.csproj", "src/CFU.Application/"]
+COPY ["src/CFU.UniversityManagement.Application/CFU.UniversityManagement.Application.csproj", "src/CFU.Application/"]
 COPY ["src/CFU.Domain/CFU.Domain.csproj", "src/CFU.Domain/"]
 RUN dotnet restore "src/CFU.UniversityManagement.WebAPI/CFU.UniversityManagement.WebAPI.csproj"
 COPY . .
